@@ -6,7 +6,7 @@
 /*   By: solareenlo <solareenlo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:40:11 by solareenlo        #+#    #+#             */
-/*   Updated: 2021/05/21 20:40:25 by solareenlo       ###   ########.fr       */
+/*   Updated: 2021/05/21 21:29:28 by solareenlo       ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t    ft_strlen(char *s) {
 
 int    main(int argc, char *argv[]) {
     if (argc == 1) {
-        std::cout << NOISE << '\n';
+        std::cout << NOISE << std::endl;
     } else {
         for (int i = 1; i < argc; i++) {
             size_t    len = ft_strlen(argv[i]);
