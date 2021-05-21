@@ -6,7 +6,7 @@
 #    By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 11:03:34 by tayamamo          #+#    #+#              #
-#    Updated: 2021/05/21 21:28:16 by solareenlo       ###   ########.fr        #
+#    Updated: 2021/05/22 04:26:06 by solareenlo       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,10 @@ $(NAME): $(OBJS)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $<
+
+.PHONY: lint
+lint:
+	cpplint $(SRC)
 
 .PHONY: thread
 thread: CFLAGS += -g -fsanitize=thread
