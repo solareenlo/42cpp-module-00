@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: solareenlo <solareenlo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 01:42:06 by solareenlo        #+#    #+#             */
-/*   Updated: 2021/05/22 02:41:27 by solareenlo       ###   ########.fr       */
+/*   Created: 2021/05/23 01:34:34 by tayamamo          #+#    #+#             */
+/*   Updated: 2021/05/23 01:55:03 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <string>
 
-class Contact {
+class   Contact {
  public:
     Contact(void);
     ~Contact(void);

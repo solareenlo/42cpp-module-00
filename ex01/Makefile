@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/05/22 15:39:42 by tayamamo          #+#    #+#              #
-#    Updated: 2021/05/22 15:39:42 by tayamamo         ###   ########.fr        #
+#    Created: 2021/05/23 01:51:07 by tayamamo          #+#    #+#              #
+#    Updated: 2021/05/23 01:51:07 by tayamamo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Makefile for philo_one, updated Sat May 22 15:39:42 JST 2021
+# Makefile for philo_one, updated Sun May 23 01:51:07 JST 2021
 
-SRC := Contact.cpp Usage.cpp main.cpp
-OBJ := Contact.o Usage.o main.o
+SRC := Contact.cpp PhoneBook.cpp Usage.cpp main.cpp
+OBJ := Contact.o PhoneBook.o Usage.o main.o
 
 HDR := Contact.hpp PhoneBook.hpp Usage.hpp
 

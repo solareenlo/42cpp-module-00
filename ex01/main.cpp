@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: solareenlo <solareenlo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tayamamo <tayamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 21:55:20 by solareenlo        #+#    #+#             */
-/*   Updated: 2021/05/23 00:19:16 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/23 01:56:04 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -15,22 +15,21 @@
 #include "Usage.hpp"
 
 int main(void) {
-    Usage usage;
-    Contact con;
+    Usage       usage;
+    PhoneBook   pbook;
     std::string cmd;
 
     usage.PutUsage();
-    usage.PutUsage2(10);
     for (;;) {
         std::cout << "> ";
         std::getline(std::cin, cmd);
         if (std::cin.bad() || std::cin.eof()) {
             return 1;
-        } else if (cmd == "EXIT") {
+        } else if (cmd == "EXIT" || cmd == "exit") {
             break;
-        } else if (cmd == "ADD") {
-            std::cout << "added" << std::endl;
-        } else if (cmd == "SEARCH") {
+        } else if (cmd == "ADD" || cmd == "add") {
+            pbook.AddContact();
+        } else if (cmd == "SEARCH" || cmd == "search") {
             std::cout << "searched" << std::endl;
         } else {
             std::cout << "Unknown command" << std::endl;

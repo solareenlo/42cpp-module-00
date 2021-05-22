@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Usage.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: solareenlo <solareenlo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 03:25:56 by solareenlo        #+#    #+#             */
-/*   Updated: 2021/05/22 16:13:16 by tayamamo         ###   ########.fr       */
+/*   Created: 2021/05/23 01:35:09 by tayamamo          #+#    #+#             */
+/*   Updated: 2021/05/23 01:55:36 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 #define USAGE_NUM 19
 
-const char kUsageStr[USAGE_NUM][100] = {
+const char  kUsageStr[USAGE_NUM][100] = {
     "Please input following command.",
     "EXIT: Delete the data and exit the program.",
     "ADD: PutUsagenew contact’s information.",
@@ -40,13 +40,12 @@ const char kUsageStr[USAGE_NUM][100] = {
     "\tnickname"
 };
 
-class Usage {
+class   Usage {
  public:
     Usage(void);
     ~Usage(void);
 
-    void PutUsage(void);
-    void PutUsage2(int);
+    void    PutUsage(void);
 };
 
 #endif  // EX01_USAGE_HPP_
