@@ -1,6 +1,7 @@
 obj
 megaphone
 *.bak
+*.png
 compile_commands.json
 .ccls*
 
