@@ -3,3 +3,6 @@ megaphone
 *.bak
 compile_commands.json
 .ccls*
+
+megaphone
+phonebook
