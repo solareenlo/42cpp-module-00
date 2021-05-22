@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:34 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/23 01:55:03 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/23 04:01:42 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -20,19 +20,26 @@ class   Contact {
  public:
     Contact(void);
     ~Contact(void);
+    void        SetContact(void);
+    void        GetContact(void);
+    std::string GetFirstName(void);
+    std::string GetLastName(void);
 
  private:
-    std::string _first_name;
-    std::string _last_name;
-    std::string _nickname;
-    std::string _login;
-    std::string _postal_address;
-    std::string _email_address;
-    std::string _phone_number;
-    std::string _birthday_date;
-    std::string _favorite_meal;
-    std::string _underwear_color;
-    std::string _darkest_secret;
+    std::string first_name_;
+    std::string last_name_;
+    std::string nickname_;
+    std::string login_;
+    std::string postal_address_;
+    std::string email_address_;
+    std::string phone_number_;
+    std::string birthday_date_;
+    std::string favorite_meal_;
+    std::string underwear_color_;
+    std::string darkest_secret_;
+    void        GetLine_(std::string a, std::string &str);
+    void        SetFirstName_(void);
+    void        SetLastName_(void);
 };
 
 #endif  // EX01_CONTACT_HPP_
