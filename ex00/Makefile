@@ -6,7 +6,7 @@
 #    By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 11:03:34 by tayamamo          #+#    #+#              #
-#    Updated: 2021/05/22 04:26:06 by solareenlo       ###   ########.fr        #
+#    Updated: 2021/05/24 02:02:42 by tayamamo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ OBJ := main.o
 
 NAME := megaphone
 
-CC := g++
-CFLAGS := -Wall -Wextra -Werror
+CC := clang++
+CFLAGS := -std=c++98 -Wall -Wextra -Werror
 CFLAGS += -O0
 CFLAGS += -g -fsanitize=address
 RM := rm -fr
