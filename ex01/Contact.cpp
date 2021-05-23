@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:25 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/23 23:44:57 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/24 01:21:01 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -98,29 +98,32 @@ void    Contact::SetLogin(void) {
 }
 
 void    Contact::SetPostalAddress(void) {
+    std::string str = "";
     for (;;) {
         bool    flag = true;
-        Contact::GetLine_("postal address (***-****) ",
-            this->con_data_[kPostalAddress]);
-        if (this->con_data_[kPostalAddress].size() != 8)
-            flag = false;
-        for (int i = 0; i < 3; i++) {
-            if (isdigit(this->con_data_[kPostalAddress][i]) == 0) {
+        Contact::GetLine_("postal address (***-****) ", str);
+        if (!str.empty()) {
+            if (str.size() != 8)
                 flag = false;
-                break;
+            for (int i = 0; i < 3; i++) {
+                if (isdigit(str[i]) == 0) {
+                    flag = false;
+                    break;
+                }
             }
-        }
-        if (this->con_data_[kPostalAddress][3] != '-')
-            flag = false;
-        for (int i = 4; i < 8; i++) {
-            if (isdigit(this->con_data_[kPostalAddress][i]) == 0) {
+            if (str[3] != '-')
                 flag = false;
-                break;
+            for (int i = 4; i < 8; i++) {
+                if (isdigit(str[i]) == 0) {
+                    flag = false;
+                    break;
+                }
             }
         }
         if (flag == true)
             break;
     }
+    this->con_data_[kPostalAddress] = str;
 }
 
 void    Contact::SetEmailAddress(void) {
@@ -128,33 +131,55 @@ void    Contact::SetEmailAddress(void) {
 }
 
 void    Contact::SetPhoneNumber(void) {
+    std::string str = "";
     for (;;) {
-        Contact::GetLine_("Phone Number (10- or 11- digit number) ",
-            this->con_data_[kPhoneNumber]);
+        Contact::GetLine_("Phone Number (10- or 11- digit number) ", str);
         bool    flag = true;
-        if (!(this->con_data_[kPhoneNumber].size() == 10
-            || this->con_data_[kPhoneNumber].size() == 11))
-            flag = false;
-        for (int i = 0;
-            i < static_cast<int>(this->con_data_[kPhoneNumber].size()); i++) {
-            if (isdigit(this->con_data_[kPhoneNumber][i]) == 0) {
+        if (!str.empty()) {
+            if (!(str.size() == 10 || str.size() == 11))
                 flag = false;
-                break;
+            for (int i = 0; i < static_cast<int>(str.size()); i++) {
+                if (isdigit(str[i]) == 0) {
+                    flag = false;
+                    break;
+                }
             }
         }
         if (flag)
             break;
     }
+    this->con_data_[kPhoneNumber] = str;
 }
 
 void    Contact::SetBirthdayDate(void) {
+    int days[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    std::string str = "";
     for (;;) {
-        Contact::GetLine_("Birthday Date (MM-DD)",
-            this->con_data_[kBirthdayDate]);
-        bool    falg = true;
-        if (falg)
+        Contact::GetLine_("birthday date (mm-dd) ", str);
+        bool    flag = true;
+        if (!str.empty()) {
+            if (str.size() != 5) {
+                flag = false;
+            } else {
+                if (!isdigit(str[0]) || !isdigit(str[1]) || str[2] != '-'
+                    || !isdigit(str[3]) || !isdigit(str[4])) {
+                    flag = false;
+                } else {
+                    int month = (str[0] - '0') * 10 + str[1] - '0';
+                    if (month < 1 || 12 < month) {
+                        flag = false;
+                    } else {
+                        int day = (str[3] - '0') * 10 + str[4] - '0';
+                        if (day < 1 || days[month - 1] < day)
+                            flag = false;
+                    }
+                }
+            }
+        }
+        if (flag)
             break;
     }
+    this->con_data_[kBirthdayDate] = str;
 }
 
 void    Contact::SetFavariteMeal(void) {

@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 21:55:20 by solareenlo        #+#    #+#             */
-/*   Updated: 2021/05/23 03:42:00 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/24 01:16:17 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ int main(void) {
             pbook.AddContact();
         } else if (cmd == "SEARCH" || cmd == "search") {
             pbook.SearchContact();
-        } else {
-            std::cout << "Unknown command" << std::endl;
         }
     }
     return 0;
