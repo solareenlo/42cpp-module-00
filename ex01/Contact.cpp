@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:25 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/24 02:24:22 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/24 02:53:21 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -81,23 +81,23 @@ void    Contact::GetLine_(const std::string a, std::string &str) {
     }
 }
 
-void    Contact::SetFirstName(void) {
+void    Contact::SetFirstName_(void) {
     Contact::GetLine_("first name ", this->con_data_[kFirstName]);
 }
 
-void    Contact::SetLastName(void) {
+void    Contact::SetLastName_(void) {
     Contact::GetLine_("last name ", this->con_data_[kLastName]);
 }
 
-void    Contact::SetNickname(void) {
+void    Contact::SetNickname_(void) {
     Contact::GetLine_("nickname ", this->con_data_[kNickname]);
 }
 
-void    Contact::SetLogin(void) {
+void    Contact::SetLogin_(void) {
     Contact::GetLine_("login ", this->con_data_[kLogin]);
 }
 
-void    Contact::SetPostalAddress(void) {
+void    Contact::SetPostalAddress_(void) {
     std::string str = "";
     for (;;) {
         bool    flag = true;
@@ -132,7 +132,7 @@ bool    Contact::IsEmailAddress_(const std::string &str) {
     return (at != std::string::npos && dot != std::string::npos);
 }
 
-void    Contact::SetEmailAddress(void) {
+void    Contact::SetEmailAddress_(void) {
     std::string str = "";
     for (;;) {
         bool    flag = true;
@@ -147,7 +147,7 @@ void    Contact::SetEmailAddress(void) {
     this->con_data_[kEmailAddress] = str;
 }
 
-void    Contact::SetPhoneNumber(void) {
+void    Contact::SetPhoneNumber_(void) {
     std::string str = "";
     for (;;) {
         Contact::GetLine_("Phone Number (10- or 11- digit number) ", str);
@@ -168,7 +168,7 @@ void    Contact::SetPhoneNumber(void) {
     this->con_data_[kPhoneNumber] = str;
 }
 
-void    Contact::SetBirthdayDate(void) {
+void    Contact::SetBirthdayDate_(void) {
     int days[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     std::string str = "";
     for (;;) {
@@ -199,28 +199,28 @@ void    Contact::SetBirthdayDate(void) {
     this->con_data_[kBirthdayDate] = str;
 }
 
-void    Contact::SetFavariteMeal(void) {
+void    Contact::SetFavariteMeal_(void) {
     Contact::GetLine_("favarite meal ", this->con_data_[kFavariteMeal]);
 }
 
-void    Contact::SetUnderwearColor(void) {
+void    Contact::SetUnderwearColor_(void) {
     Contact::GetLine_("underwear color ", this->con_data_[kUnderwearColor]);
 }
 
-void    Contact::SetDarkestSecret(void) {
+void    Contact::SetDarkestSecret_(void) {
     Contact::GetLine_("darkest secret ", this->con_data_[kDarkestSecret]);
 }
 
 void    Contact::SetContact(void) {
-    SetFirstName();
-    SetLastName();
-    SetNickname();
-    SetLogin();
-    SetPostalAddress();
-    SetEmailAddress();
-    SetPhoneNumber();
-    SetBirthdayDate();
-    SetFavariteMeal();
-    SetUnderwearColor();
-    SetDarkestSecret();
+    SetFirstName_();
+    SetLastName_();
+    SetNickname_();
+    SetLogin_();
+    SetPostalAddress_();
+    SetEmailAddress_();
+    SetPhoneNumber_();
+    SetBirthdayDate_();
+    SetFavariteMeal_();
+    SetUnderwearColor_();
+    SetDarkestSecret_();
 }

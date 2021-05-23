@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:34 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/24 02:15:06 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/24 02:55:03 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -34,20 +34,6 @@ enum : int {
   kContactSize,
 };
 
-const char  con_name[kContactSize][100] = {
-    "first name",
-    "last name",
-    "nickname",
-    "login\t",
-    "postal address",
-    "email address",
-    "phone number",
-    "birthday date",
-    "favarite meal",
-    "underwear color",
-    "darkest secret",
-};
-
 class   Contact {
  public:
     Contact(void);
@@ -67,22 +53,22 @@ class   Contact {
     std::string GetDarkestSecret(void);
 
     void        SetContact(void);
-    void        SetFirstName(void);
-    void        SetLastName(void);
-    void        SetNickname(void);
-    void        SetLogin(void);
-    void        SetPostalAddress(void);
-    void        SetEmailAddress(void);
-    void        SetPhoneNumber(void);
-    void        SetBirthdayDate(void);
-    void        SetFavariteMeal(void);
-    void        SetUnderwearColor(void);
-    void        SetDarkestSecret(void);
 
  private:
     std::string con_data_[CONTACT_SIZE];
     void        GetLine_(std::string a, std::string &str);
     bool        IsEmailAddress_(const std::string &str);
+    void        SetFirstName_(void);
+    void        SetLastName_(void);
+    void        SetNickname_(void);
+    void        SetLogin_(void);
+    void        SetPostalAddress_(void);
+    void        SetEmailAddress_(void);
+    void        SetPhoneNumber_(void);
+    void        SetBirthdayDate_(void);
+    void        SetFavariteMeal_(void);
+    void        SetUnderwearColor_(void);
+    void        SetDarkestSecret_(void);
 };
 
 #endif  // EX01_CONTACT_HPP_
