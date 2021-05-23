@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:25 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/24 02:53:21 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/24 02:57:04 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@ Contact::Contact(void) {
 }
 
 Contact::~Contact(void) {
-}
-
-void    Contact::GetContact(void) {
-    std::cout << this->con_data_[kFirstName] << std::endl;
-    std::cout << this->con_data_[kLastName] << std::endl;
-    std::cout << this->con_data_[kNickname] << std::endl;
 }
 
 std::string Contact::GetFirstName(void) {
