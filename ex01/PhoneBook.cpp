@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:47 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/23 04:04:44 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/23 12:51:15 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void    PhoneBook::AddContact(void) {
         return;
     }
     this->con_[cntact_size_].SetContact();
-    std::cout << "Added" << std::endl;
+    std::cout << "Input completed!" << std::endl;
     this->cntact_size_++;
 }
 
@@ -40,6 +40,7 @@ void    PhoneBook::SearchContact(void) {
         std::cout << std::right << std::setw(10) << i;
         PhoneBook::FormatedCout_(this->con_[i].GetFirstName());
         PhoneBook::FormatedCout_(this->con_[i].GetLastName());
+        PhoneBook::FormatedCout_(this->con_[i].GetNickname());
         std::cout << '|' << std::endl;
     }
 }
