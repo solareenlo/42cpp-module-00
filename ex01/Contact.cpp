@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:25 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/23 22:19:44 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/23 23:44:57 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Contact::Contact(void) {
     for (int i = 0; i < CONTACT_SIZE; i++)
-        con_data_[i] = "";
+        this->con_data_[i] = "";
 }
 
 Contact::~Contact(void) {
@@ -38,6 +38,38 @@ std::string Contact::GetNickname(void) {
     return (this->con_data_[kNickname]);
 }
 
+std::string Contact::GetLogin(void) {
+    return (this->con_data_[kLogin]);
+}
+
+std::string Contact::GetPostalAddres(void) {
+    return (this->con_data_[kPostalAddress]);
+}
+
+std::string Contact::GetEmailAddress(void) {
+    return (this->con_data_[kEmailAddress]);
+}
+
+std::string Contact::GetPhoneNumber(void) {
+    return (this->con_data_[kPhoneNumber]);
+}
+
+std::string Contact::GetBirthdayDate(void) {
+    return (this->con_data_[kBirthdayDate]);
+}
+
+std::string Contact::GetFavariteMeal(void) {
+    return (this->con_data_[kFavariteMeal]);
+}
+
+std::string Contact::GetUnderwearColor(void) {
+    return (this->con_data_[kUnderwearColor]);
+}
+
+std::string Contact::GetDarkestSecret(void) {
+    return (this->con_data_[kDarkestSecret]);
+}
+
 void    Contact::GetLine_(const std::string a, std::string &str) {
     std::cout << a;
     std::cout << "> ";
@@ -50,21 +82,25 @@ void    Contact::GetLine_(const std::string a, std::string &str) {
 }
 
 void    Contact::SetFirstName(void) {
-    Contact::GetLine_("First Name ", this->con_data_[kFirstName]);
+    Contact::GetLine_("first name ", this->con_data_[kFirstName]);
 }
 
 void    Contact::SetLastName(void) {
-    Contact::GetLine_("Last Name ", this->con_data_[kLastName]);
+    Contact::GetLine_("last name ", this->con_data_[kLastName]);
 }
 
 void    Contact::SetNickname(void) {
-    Contact::GetLine_("Nickname ", this->con_data_[kNickname]);
+    Contact::GetLine_("nickname ", this->con_data_[kNickname]);
+}
+
+void    Contact::SetLogin(void) {
+    Contact::GetLine_("login ", this->con_data_[kLogin]);
 }
 
 void    Contact::SetPostalAddress(void) {
     for (;;) {
         bool    flag = true;
-        Contact::GetLine_("Postal Address (***-****) ",
+        Contact::GetLine_("postal address (***-****) ",
             this->con_data_[kPostalAddress]);
         if (this->con_data_[kPostalAddress].size() != 8)
             flag = false;
@@ -88,7 +124,7 @@ void    Contact::SetPostalAddress(void) {
 }
 
 void    Contact::SetEmailAddress(void) {
-    Contact::GetLine_("Email Address ", this->con_data_[kEmailAddress]);
+    Contact::GetLine_("email address ", this->con_data_[kEmailAddress]);
 }
 
 void    Contact::SetPhoneNumber(void) {
@@ -121,12 +157,28 @@ void    Contact::SetBirthdayDate(void) {
     }
 }
 
+void    Contact::SetFavariteMeal(void) {
+    Contact::GetLine_("favarite meal ", this->con_data_[kFavariteMeal]);
+}
+
+void    Contact::SetUnderwearColor(void) {
+    Contact::GetLine_("underwear color ", this->con_data_[kUnderwearColor]);
+}
+
+void    Contact::SetDarkestSecret(void) {
+    Contact::GetLine_("darkest secret ", this->con_data_[kDarkestSecret]);
+}
+
 void    Contact::SetContact(void) {
     SetFirstName();
     SetLastName();
     SetNickname();
+    SetLogin();
     SetPostalAddress();
     SetEmailAddress();
     SetPhoneNumber();
     SetBirthdayDate();
+    SetFavariteMeal();
+    SetUnderwearColor();
+    SetDarkestSecret();
 }

@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:34 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/23 22:37:28 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/23 23:41:56 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -52,18 +52,32 @@ class   Contact {
  public:
     Contact(void);
     ~Contact(void);
+
     void        GetContact(void);
     std::string GetFirstName(void);
     std::string GetLastName(void);
     std::string GetNickname(void);
+    std::string GetLogin(void);
+    std::string GetPostalAddres(void);
+    std::string GetEmailAddress(void);
+    std::string GetPhoneNumber(void);
+    std::string GetBirthdayDate(void);
+    std::string GetFavariteMeal(void);
+    std::string GetUnderwearColor(void);
+    std::string GetDarkestSecret(void);
+
     void        SetContact(void);
     void        SetFirstName(void);
     void        SetLastName(void);
     void        SetNickname(void);
+    void        SetLogin(void);
     void        SetPostalAddress(void);
     void        SetEmailAddress(void);
     void        SetPhoneNumber(void);
     void        SetBirthdayDate(void);
+    void        SetFavariteMeal(void);
+    void        SetUnderwearColor(void);
+    void        SetDarkestSecret(void);
 
  private:
     std::string con_data_[CONTACT_SIZE];

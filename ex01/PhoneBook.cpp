@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:47 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/23 22:38:06 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/24 00:26:15 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -36,14 +36,17 @@ void    PhoneBook::FormatedCoutCenter_(std::string const str) {
 
 void    PhoneBook::FormatedCoutRight_(std::string const str) {
     std::cout << '|';
-    std::cout << std::right << std::setw(10) << str;
+    if (str.size() > 9)
+        std::cout << std::setw(9) << str.substr(0, 9) << ".";
+    else
+        std::cout << std::right << std::setw(10) << str;
 }
 
 void    PhoneBook::PutList_(void) {
-    PhoneBook::FormatedCoutCenter_("  Index   ");
+    PhoneBook::FormatedCoutCenter_("Index");
     PhoneBook::FormatedCoutCenter_("First Name");
-    PhoneBook::FormatedCoutCenter_("Last Name ");
-    PhoneBook::FormatedCoutCenter_(" Nickname ");
+    PhoneBook::FormatedCoutCenter_("Last Name");
+    PhoneBook::FormatedCoutCenter_("Nickname");
     std::cout << '|' << std::endl;
     PhoneBook::FormatedCoutCenter_("----------");
     PhoneBook::FormatedCoutCenter_("----------");
@@ -62,11 +65,26 @@ void    PhoneBook::PutList_(void) {
 }
 
 void    PhoneBook::PutContact_(const int index) {
-    if (index < 0 || this->contact_size_ < index)
+    if (index < 0 || this->contact_size_ - 1 < index)
         return;
-    for (int i = 0; i < CONTACT_SIZE; i++) {
-        std::cout << con_name[i] << "\t:" <<  std::endl;
-    }
+    std::cout << "first name\t: " << con_[index].GetFirstName() << std::endl;
+    std::cout << "last name\t: " << con_[index].GetLastName() << std::endl;
+    std::cout << "nickname\t: " << con_[index].GetNickname() << std::endl;
+    std::cout << "login\t\t: " << con_[index].GetLogin() << std::endl;
+    std::cout << "postal address\t: ";
+    std::cout << con_[index].GetPostalAddres() << std::endl;
+    std::cout << "email address\t: ";
+    std::cout << con_[index].GetEmailAddress() << std::endl;
+    std::cout << "phone number\t: ";
+    std::cout << con_[index].GetPhoneNumber() << std::endl;
+    std::cout << "birthday date\t: ";
+    std::cout << con_[index].GetBirthdayDate() << std::endl;
+    std::cout << "favorite meal\t: ";
+    std::cout << con_[index].GetFavariteMeal() << std::endl;
+    std::cout << "underwear color\t: ";
+    std::cout << con_[index].GetUnderwearColor() << std::endl;
+    std::cout << "darkest secret\t: ";
+    std::cout << con_[index].GetDarkestSecret() << std::endl;
 }
 
 void    PhoneBook::SearchContact(void) {
@@ -86,22 +104,22 @@ void    PhoneBook::SearchContact(void) {
             std::cout << "EXIT" << std::endl;
             exit(0);
         }
-        if (str.empty()) {
+        if (str.empty() || isdigit(str[0]) == 0) {
             flag = false;
         } else {
             int i = atoi(str.c_str());
-            if (i < 0 || this->contact_size_ < i) {
+            if (i < 0 || this->contact_size_ - 1 < i) {
                 flag = false;
             }
         }
         if (flag) {
             break;
         } else {
-            std::cout << "Invalid index, " << std::endl;
+            std::cout << "Invalid index." << std::endl;
         }
     }
     int i = atoi(str.c_str());
-    if (0 <= i && i <= contact_size_)
+    if (0 <= i && i < contact_size_)
         PhoneBook::PutContact_(i);
 }
 
