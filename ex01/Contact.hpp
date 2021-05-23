@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:34 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/23 12:43:36 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/23 14:48:59 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -21,11 +21,18 @@ class   Contact {
  public:
     Contact(void);
     ~Contact(void);
-    void        SetContact(void);
     void        GetContact(void);
     std::string GetFirstName(void);
     std::string GetLastName(void);
     std::string GetNickname(void);
+    void        SetContact(void);
+    void        SetFirstName(void);
+    void        SetLastName(void);
+    void        SetNickname(void);
+    void        SetPostalAddress(void);
+    void        SetEmailAddress(void);
+    void        SetPhoneNumber(void);
+    void        SetBirthdayDate(void);
 
  private:
     std::string first_name_;
@@ -40,10 +47,6 @@ class   Contact {
     std::string underwear_color_;
     std::string darkest_secret_;
     void        GetLine_(std::string a, std::string &str);
-    void        SetFirstName_(void);
-    void        SetLastName_(void);
-    void        SetNickname_(void);
-    void        SetPostalAddress_(void);
 };
 
 #endif  // EX01_CONTACT_HPP_

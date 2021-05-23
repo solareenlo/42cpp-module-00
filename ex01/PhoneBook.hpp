@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:56 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/23 04:05:33 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/23 15:03:45 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ class   PhoneBook {
  private:
     int     cntact_size_;
     Contact con_[CONTACT_MAX_SIZE];
-    void    FormatedCout_(std::string const str);
+    void    FormatedCoutCenter_(std::string const str);
+    void    FormatedCoutRight_(std::string const str);
+    void    PutList_(void);
 };
 
 #endif  // EX01_PHONEBOOK_HPP_
