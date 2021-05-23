@@ -6,7 +6,7 @@
 #    By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/23 01:51:07 by tayamamo          #+#    #+#              #
-#    Updated: 2021/05/23 01:51:07 by tayamamo         ###   ########.fr        #
+#    Updated: 2021/05/24 01:53:51 by tayamamo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ HDR := Contact.hpp PhoneBook.hpp Usage.hpp
 NAME := phonebook
 
 CC := clang++
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -std=c++98 -Wall -Wextra -Werror
 CFLAGS += -O0
 CFLAGS += -g -fsanitize=address
 RM := rm -fr
