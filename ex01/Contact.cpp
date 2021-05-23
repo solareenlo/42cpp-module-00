@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:25 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/24 01:21:01 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/05/24 02:24:22 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -126,8 +126,25 @@ void    Contact::SetPostalAddress(void) {
     this->con_data_[kPostalAddress] = str;
 }
 
+bool    Contact::IsEmailAddress_(const std::string &str) {
+    std::string::size_type at = str.find("@");
+    std::string::size_type dot = str.find(".", at);
+    return (at != std::string::npos && dot != std::string::npos);
+}
+
 void    Contact::SetEmailAddress(void) {
-    Contact::GetLine_("email address ", this->con_data_[kEmailAddress]);
+    std::string str = "";
+    for (;;) {
+        bool    flag = true;
+        Contact::GetLine_("email address ", str);
+        if (!str.empty()) {
+            if (!IsEmailAddress_(str))
+                flag = false;
+        }
+        if (flag)
+            break;
+    }
+    this->con_data_[kEmailAddress] = str;
 }
 
 void    Contact::SetPhoneNumber(void) {
