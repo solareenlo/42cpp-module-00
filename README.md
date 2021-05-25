@@ -1,5 +1,14 @@
 # cpp-module-00
 
+### ex00
+- 本当の練習
+- hello world!
+
+### ex01
+- 入門編でよくやる todo リスト作成の簡易版である電話帳作成を通した C++ の書き方に慣れる練習
+
+### ex01
+
 ## References
 - [C++ Support in Clang](https://clang.llvm.org/cxx_status.html)
     | Language Standard        | Flag       | Available in Clang?     |
