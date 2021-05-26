@@ -6,8 +6,7 @@
 
 ### ex01
 - 入門編でよくやる todo リスト作成の簡易版である電話帳作成を通した C++ の書き方に慣れる練習
-
-### ex01
+- [thisポインタ](http://wisdom.sakura.ne.jp/programming/cpp/cpp15.html)
 
 ## References
 - [C++ Support in Clang](https://clang.llvm.org/cxx_status.html)
