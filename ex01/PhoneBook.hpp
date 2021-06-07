@@ -19,7 +19,7 @@
 #include <string>
 #include "Contact.hpp"
 
-#define PHONEBOOK_MAX_SIZE 2
+#define PHONEBOOK_MAX_SIZE 8
 
 class   PhoneBook {
  public:
