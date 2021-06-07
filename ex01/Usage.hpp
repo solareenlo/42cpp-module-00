@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:35:09 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/23 21:13:17 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:33:32 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ const char  kUsageStr[USAGE_NUM][100] = {
 
 class   Usage {
  public:
-    Usage(void);
-    ~Usage(void);
+    Usage();
+    ~Usage();
 
-    void    PutUsage(void);
+    void    PutUsage();
 };
 
 #endif  // EX01_USAGE_HPP_
