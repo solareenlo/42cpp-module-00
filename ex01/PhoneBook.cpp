@@ -6,20 +6,20 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:47 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/24 00:26:15 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:33:03 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void) {
+PhoneBook::PhoneBook() {
     this->contact_size_ = 0;
 }
 
-PhoneBook::~PhoneBook(void) {
+PhoneBook::~PhoneBook() {
 }
 
-void    PhoneBook::AddContact(void) {
+void    PhoneBook::AddContact() {
     if (this->contact_size_ == PHONEBOOK_MAX_SIZE) {
         std::cout << "Phonebook is full." << std::endl;
         return;
@@ -42,7 +42,7 @@ void    PhoneBook::FormatedCoutRight_(std::string const str) {
         std::cout << std::right << std::setw(10) << str;
 }
 
-void    PhoneBook::PutList_(void) {
+void    PhoneBook::PutList_() {
     PhoneBook::FormatedCoutCenter_("Index");
     PhoneBook::FormatedCoutCenter_("First Name");
     PhoneBook::FormatedCoutCenter_("Last Name");
@@ -87,7 +87,7 @@ void    PhoneBook::PutContact_(const int index) {
     std::cout << con_[index].GetDarkestSecret() << std::endl;
 }
 
-void    PhoneBook::SearchContact(void) {
+void    PhoneBook::SearchContact() {
     if (PhoneBookIsEmpty_()) {
         std::cout << "Phone Book is empty. Please ADD contact first.";
         std::cout << std::endl;
@@ -123,10 +123,10 @@ void    PhoneBook::SearchContact(void) {
         PhoneBook::PutContact_(i);
 }
 
-bool    PhoneBook::PhoneBookIsEmpty_(void) {
+bool    PhoneBook::PhoneBookIsEmpty_() {
     return (this->contact_size_ == 0);
 }
 
-bool    PhoneBook::PhoneBookIsFull_(void) {
+bool    PhoneBook::PhoneBookIsFull_() {
     return (this->contact_size_ == PHONEBOOK_MAX_SIZE);
 }

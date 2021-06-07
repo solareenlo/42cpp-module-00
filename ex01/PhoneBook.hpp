@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:56 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/23 21:03:59 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:32:40 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -23,21 +23,21 @@
 
 class   PhoneBook {
  public:
-    PhoneBook(void);
-    ~PhoneBook(void);
+    PhoneBook();
+    ~PhoneBook();
 
-    void    AddContact(void);
-    void    SearchContact(void);
+    void    AddContact();
+    void    SearchContact();
 
  private:
     int     contact_size_;
     Contact con_[PHONEBOOK_MAX_SIZE];
     void    FormatedCoutCenter_(std::string const str);
     void    FormatedCoutRight_(std::string const str);
-    void    PutList_(void);
+    void    PutList_();
     void    PutContact_(const int index);
-    bool    PhoneBookIsEmpty_(void);
-    bool    PhoneBookIsFull_(void);
+    bool    PhoneBookIsEmpty_();
+    bool    PhoneBookIsFull_();
 };
 
 #endif  // EX01_PHONEBOOK_HPP_
