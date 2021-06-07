@@ -6,7 +6,7 @@
 /*   By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 01:34:34 by tayamamo          #+#    #+#             */
-/*   Updated: 2021/05/24 02:57:11 by tayamamo         ###   ########.fr       */
+/*   Updated: 2021/06/07 15:25:52 by tayamamo         ###   ########.fr       */
 /*   Copyright 2021                                                           */
 /* ************************************************************************** */
 
@@ -36,38 +36,38 @@ enum : int {
 
 class   Contact {
  public:
-    Contact(void);
-    ~Contact(void);
+    Contact();
+    ~Contact();
 
-    std::string GetFirstName(void);
-    std::string GetLastName(void);
-    std::string GetNickname(void);
-    std::string GetLogin(void);
-    std::string GetPostalAddres(void);
-    std::string GetEmailAddress(void);
-    std::string GetPhoneNumber(void);
-    std::string GetBirthdayDate(void);
-    std::string GetFavariteMeal(void);
-    std::string GetUnderwearColor(void);
-    std::string GetDarkestSecret(void);
+    std::string GetFirstName();
+    std::string GetLastName();
+    std::string GetNickname();
+    std::string GetLogin();
+    std::string GetPostalAddres();
+    std::string GetEmailAddress();
+    std::string GetPhoneNumber();
+    std::string GetBirthdayDate();
+    std::string GetFavariteMeal();
+    std::string GetUnderwearColor();
+    std::string GetDarkestSecret();
 
-    void        SetContact(void);
+    void        SetContact();
 
  private:
     std::string con_data_[CONTACT_SIZE];
     void        GetLine_(std::string a, std::string &str);
     bool        IsEmailAddress_(const std::string &str);
-    void        SetFirstName_(void);
-    void        SetLastName_(void);
-    void        SetNickname_(void);
-    void        SetLogin_(void);
-    void        SetPostalAddress_(void);
-    void        SetEmailAddress_(void);
-    void        SetPhoneNumber_(void);
-    void        SetBirthdayDate_(void);
-    void        SetFavariteMeal_(void);
-    void        SetUnderwearColor_(void);
-    void        SetDarkestSecret_(void);
+    void        SetFirstName_();
+    void        SetLastName_();
+    void        SetNickname_();
+    void        SetLogin_();
+    void        SetPostalAddress_();
+    void        SetEmailAddress_();
+    void        SetPhoneNumber_();
+    void        SetBirthdayDate_();
+    void        SetFavariteMeal_();
+    void        SetUnderwearColor_();
+    void        SetDarkestSecret_();
 };
 
 #endif  // EX01_CONTACT_HPP_
