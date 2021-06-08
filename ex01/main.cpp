@@ -14,11 +14,16 @@
 #include "PhoneBook.hpp"
 #include "Usage.hpp"
 
-int main(void) {
+int main(int argc, char *argv[]) {
     Usage       usage;
     PhoneBook   pbook;
     std::string cmd;
 
+    (void)argv;
+    if (argc != 1) {
+        std::cout << "Usage:\n./phonebook" << std::endl;
+        return 1;
+    }
     usage.PutUsage();
     for (;;) {
         std::cout << "> ";
