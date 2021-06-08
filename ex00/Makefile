@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tayamamo <tayamamo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/05/21 11:03:34 by tayamamo          #+#    #+#              #
-#    Updated: 2021/05/24 02:02:42 by tayamamo         ###   ########.fr        #
+#    Created: 2021/06/09 06:46:33 by tayamamo          #+#    #+#              #
+#    Updated: 2021/06/09 06:46:33 by tayamamo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Makefile for philo_one, updated Fri May 21 11:03:34 JST 2021
+# Makefile for philo_one, updated Wed Jun  9 06:46:33 JST 2021
 
-SRC := main.cpp
-OBJ := main.o
+SRC := megaphone.cpp
+OBJ := megaphone.o
 
 # DO NOT ADD OR MODIFY ANY LINES ABOVE THIS -- run 'make source' to add files
 
